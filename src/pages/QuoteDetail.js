@@ -7,11 +7,6 @@ import useHttp from "../hooks/use-http";
 import { getSingleQuote } from "../lib/api";
 import LoadingSpinner from "../components/ui/LoadingSpinner";
 
-const DUMMY_QUOTES = [
-  { id: "q1", author: "Max", text: "Learning React is fun!" },
-  { id: "q2", author: "Maximilian", text: "Learning React is great!" }
-];
-
 const QuoteDetail = () => {
   const match = useRouteMatch();
   const params = useParams();
@@ -55,7 +50,7 @@ const QuoteDetail = () => {
           </Link>
         </div>
       </Route>
-      <Route path={`/quote/${match.path}/comments`}>
+      <Route path={`${match.path}/comments`}>
         <Comments />
       </Route>
     </Fragment>
